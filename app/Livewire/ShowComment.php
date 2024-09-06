@@ -59,6 +59,7 @@ class ShowComment extends Component
     public function update()
     {
         $this->newComment = $this->oldComment;
+        $this->validate();
         try {
             Comment::find($this->comment_id)->update([
                 'comment' => $this->newComment,
