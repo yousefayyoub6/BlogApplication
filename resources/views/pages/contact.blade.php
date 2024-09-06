@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    Blog Application
+    Contact Blog Application
 
 @stop
 
