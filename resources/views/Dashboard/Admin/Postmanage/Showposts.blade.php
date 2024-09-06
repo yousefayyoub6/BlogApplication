@@ -19,8 +19,8 @@
         </div><!-- End Page Title -->
         <div class="row ">
             @foreach ($posts as $post)
-                <div class="col-md-4 d-flex">
-                    <div class="card text-dark bg-light mb-3" style="max-width: 18rem;">
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 text-dark bg-light mb-3 " style="max-width: 18rem;">
                         <div class="card-header">Post</div>
                         <div class="card-body">
                             <h5 class="card-title">{{ $post->title }}</h5>

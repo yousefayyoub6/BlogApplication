@@ -1,36 +1,33 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace App\Http\Controllers\Home;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Auth\LoginRequest;
-use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\View\View;
 
-class AuthenticatedSessionController extends Controller
+class LoginController extends Controller
 {
- 
-    public function create(): View
+    public function create()
     {
         return view('auth.login');
     }
 
 
-    public function store(LoginRequest $request): RedirectResponse
+    public function store(LoginRequest $request)
     {
         $request->authenticate();
 
         $request->session()->regenerate();
 
-        if(Auth::user()->role->role == 'Admin'){
+        if (Auth::user()->role->role == 'Admin') {
             return redirect()->route('admin.dashboard');
         }
-            return redirect()->route('blog');
+        return redirect()->route('blog');
     }
 
-    public function destroy(Request $request): RedirectResponse
+    public function destroy(Request $request)
     {
         Auth::guard('web')->logout();
 

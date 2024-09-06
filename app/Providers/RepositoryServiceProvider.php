@@ -2,7 +2,9 @@
 
 namespace App\Providers;
 
+use App\IRepository\HomeInterface;
 use App\IRepository\PostInterface;
+use App\Repository\HomeRepository;
 use App\Repository\PostRepository;
 use Illuminate\Support\ServiceProvider;
 
@@ -14,6 +16,11 @@ class RepositoryServiceProvider extends ServiceProvider
         $this->app->bind(
             PostInterface::class,
             PostRepository::class
+        );
+
+        $this->app->bind(
+            HomeInterface::class,
+            HomeRepository::class
         );
     }
 

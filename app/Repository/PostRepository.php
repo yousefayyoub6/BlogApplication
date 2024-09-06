@@ -14,7 +14,7 @@ class PostRepository implements PostInterface
         $posts = Post::simplePaginate(10);
         $countPosts = Post::count();
 
-        return view('Dashboard.Admin.Postmanage.Showposts', compact('posts','countPosts'));
+        return view('Dashboard.Admin.Postmanage.Showposts', compact('posts', 'countPosts'));
     }
 
     public function create()
